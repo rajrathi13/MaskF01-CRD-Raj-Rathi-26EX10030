@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MASK - About Us</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        .about-section {
+            min-height: 100vh;
+            position: relative;
+            padding: 60px 7%;
+            overflow: hidden;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.85)
+                ),
+                url("background.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .about-container {
+            max-width: 1400px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.6fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-left h1 {
+            font-size: 50px;
+            line-height: 1;
+            margin-bottom: 45px;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease,
+                text-shadow 0.35s ease,
+                color 0.35s ease;
+        }
+        .about-left h1:hover {
+            text-shadow: 0 0px 55px rgba(1, 120, 255, 0.7);
+            color:  rgba(1, 120, 255, 0.8);
+        }
+
+        .about-left h2 {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 45px;
+            max-width: 500px;
+            cursor: pointer;
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease,
+                text-shadow 0.35s ease,
+                color 0.35s ease;
+        }
+        .about-left h2:hover {
+            text-shadow: 0 0px 100px rgba(1, 120, 255, 1);
+            color:  rgba(1, 120, 255, 0.9);
+            
+        }
+
+        .about-left p {
+            color: #ddd;
+            font-size: 15px;
+            line-height: 1.55;
+            margin-bottom: 25px;
+            max-width: 500px;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: bold;
+        }
+
+        .team-btn {
+            width: fit-content;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(253, 253, 253, 0.96);
+            border-radius: 40px;
+            transition: 0.35s ease;
+        }
+
+        .team-btn i {
+            transition: transform 0.35s ease;
+        }
+
+        .team-btn:hover {
+            background:  rgba(1, 120, 255, 0.96);
+            color: black;
+            box-shadow: 0 0px 50px rgba(1, 120, 255, 0.7);
+            border: 1px solid rgba(1, 120, 255, 0.96);
+            scale: 110%;
+
+            
+        }
+        .team-btn:hover i{
+            transform: translate(10px, 0)rotateZ(-180deg);
+        }
+        
+
+        
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        
+
+        .team-card {
+            min-height: 335px;
+            padding: 32px;
+            background: rgba(35, 35, 35, 0.9);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease,
+                box-shadow 0.35s ease,
+                border 0.35s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        
+
+        .team-card:hover {
+            background:  rgba(1, 120, 255, 0.96);
+            border-color: rgba(1, 120, 255, 0.96);
+            box-shadow:
+                0 0px 100px rgba(1, 120, 255, 0.7),
+                0 0 100px rgba(1, 120, 255, 0.7);
+        }
+        .team-icon {
+            font-size: 42px;
+            margin-bottom: 28px;
+
+            color: rgb(255, 255, 255);
+            transition: transform 0.55s ease,
+            color 0.35s ease,
+            scale 0.35s ease;
+        }
+        .team-card:hover .team-icon {
+            color: #0e019f;
+            text-shadow: 0 0px 100px rgba(249, 249, 249, 0.8);
+            scale: 110%;
+            transform: rotateX(-360deg);
+        }
+        
+        .team-card h3 {
+            font-size: 25px;
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+        .team-card p {
+            color: #ddd;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+        .team-card {
+            transform: translateY(30px);
+        }
+        @media (max-width: 1100px) {
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .about-left {
+                max-width: 700px;
+            }
+
+            .teams-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-left h1 {
+                margin-bottom: 25px;
+            }
+        }
+        @media (max-width: 650px) {
+
+            .about-section {
+                padding: 45px 20px;
+                background-attachment: scroll;
+            }
+
+            .about-container {
+                gap: 40px;
+            }
+
+            .about-left h1 {
+                font-size: 48px;
+            }
+
+            .about-left h2 {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .about-left p {
+                font-size: 14px;
+            }
+
+            .teams-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .team-card {
+                min-height: auto;
+                padding: 28px;
+            }
+
+            .team-card h3 {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .team-icon {
+                font-size: 35px;
+                margin-bottom: 20px;
+            }
+
+            .team-btn {
+                padding: 15px 25px;
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .about-section {
+                padding: 35px 15px;
+            }
+
+            .about-left h1 {
+                font-size: 40px;
+            }
+
+            .team-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="about-section">
+
+    <div class="about-container">
+
+
+        <div class="about-left">
+
+            <h1>About Us</h1>
+
+            <h2>
+                OUR SOCIETY CONSISTS OF FIVE TEAMS.
+            </h2>
+
+            <p>
+                MASK if the passionate anime and manga community of IIT Kharagpur, dedicated to celebrating anime, manga, manwha, and otaku culture. We organise a variety of events throughout the year, including anime screenings, quizzes, and treasure hunts, creating a fun and engaging space for fans on campus.
+
+            </p>
+
+
+            <p>
+               Beyond on-campus activities, MASK maintains an active online presence on Instagram, YouTube, Medium and on this website. Through these platforms, we share artwork, reviews, articles, and event updates, to connect with enthusiasts both within and beyond IIT Kharagpur, MASK aims to build a vibrant, inclusive, community where members can explore and share their love for anime and manga.
+            </p>
+
+            <a href="#teams" class="team-btn">
+                <span>Meet the teams</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        
+
+        <div class="teams-grid" id="teams">
+
+            
+
+            <div class="team-card">
+
+                <div class="team-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <h3>Quiz Team</h3>
+
+                <p>
+                    The Quiz team works on making engaging anime quizzes and 
+                    puzzles for various events, competition and newsletter. 
+                    They also work on handling the schematics of the event.
+                </p>
+
+            </div>
+
+
+            
+
+            <div class="team-card">
+
+                <div class="team-icon">
+                    <i class="fa-solid fa-clapperboard"></i>
+                </div>
+
+                <h3>AMV Team</h3>
+
+                <p>
+                    They work on making AMVs, be it full-fledged 3-minute videos or small 30-second reels. 
+                    They also make the promotional videos of the events as well as live coverage videos.
+                </p>
+
+            </div>
+
+
+          
+
+            <div class="team-card">
+
+                <div class="team-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>WebD Team</h3>
+
+                <p>
+                    WebDev team ensures the smooth digital experiences,
+                    managing our website and making it easy for everyone
+                    to connect.
+                </p>
+
+            </div>
+
+
+            
+
+            <div class="team-card">
+
+                <div class="team-icon">
+                    <i class="fa-solid fa-paintbrush"></i>
+                </div>
+
+                <h3>DNA Team</h3>
+
+                <p>
+                    The Design and Arts team is involved in making fan arts, be it traditional or digital. 
+                    They also work on making the designs of the posters, merchandise and even the website.
+                </p>
+
+            </div>
+
+            <div class="team-card">
+
+                <div class="team-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+
+                <h3>MN Team</h3>
+
+                <p>
+                    They are in charge of handling our social media and
+                    responsible for releasing newsletters. Check them out
+                    for interesting articles and puzzles.
+                </p>
+
+            </div>
+
+
+
+            <div class="team-card">
+
+                <div class="team-icon">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+
+                <h3>Music Team</h3>
+
+                <p>
+                    The music team engages primarily in performing at MASK events, 
+                    adding a flavour in some of our events. 
+                    They plan to release some song covers in the future.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</body>
+</html>
